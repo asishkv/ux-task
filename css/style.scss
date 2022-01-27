@@ -1,0 +1,435 @@
+$bgblue:#0040FD;
+$bggrey:#F5F5F5;
+$bgwhite:#ffffff;
+$bggreydark:#C4C4C4;
+
+$textwhite:#ffffff;
+$textblack:#000000;
+$textgrey: #575757;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+*:focus,
+*:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: Proxima Nova;
+    font-weight: normal;
+    font-style: normal;
+    background: #ffffff;
+}
+
+
+/* Section Start*/
+.chat-wrapper {
+    .chat-header {
+        background: linear-gradient(109.44deg, #0040FF 1.32%, #0B3BCA 99.1%);
+        padding: 16px 36px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width:767px) {
+            padding: 16px 20px;
+        }
+
+        .chat-item {
+            .flex-inner {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                // item 1
+                .option {
+                    background-image: url(../img/option.svg);
+                    width: 4px;
+                    height: 18px;
+                    background-repeat: no-repeat;
+                    margin-right: 34px;
+
+                    @media screen and (max-width:767px) {
+                        margin-right: 20px;
+                    }
+                }
+
+                .logo {
+                    background-image: url(https://picsum.photos/30/30);
+                    width: 30px;
+                    height: 30px;
+                    background-repeat: no-repeat;
+                    border-radius: 8px;
+                    margin-right: 16px;
+                }
+
+                .logo-text {
+                    font-family: Proxima Nova;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $textwhite;
+                }
+
+                // item 2
+                .expend {
+                    background-image: url(../img/expend.svg);
+                    width: 18px;
+                    height: 18px;
+                    background-repeat: no-repeat;
+                    margin-right: 32px;
+
+                    @media screen and (max-width:767px) {
+                        margin-right: 24px;
+                    }
+                }
+
+                .dropdown {
+                    background-image: url(../img/dropdown.svg);
+                    width: 18px;
+                    height: 10px;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+
+    // chat-container
+    .chat-container {
+        width: 786px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        // height: calc(100vh - 62px);
+
+        @media screen and (max-width:767px) {
+            width: auto;
+        }
+
+        .chat-box-wrap {
+            margin: 16px 0;
+            height: calc(100vh - 160px);
+
+            @media screen and (max-width:767px) {}
+
+            @media screen and (max-width:375px) {
+                height: calc(100vh - 80px);
+            }
+
+            .chat-box-left {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                margin-bottom: 12px;
+                justify-content: flex-start;
+
+                .chat-img {
+                    width: 20px;
+                    height: 20px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 4px;
+                    }
+                }
+
+                .chat-contents {
+                    background-color: $bggrey;
+                    color: $textblack;
+                    opacity: 0.8;
+                    font-size: 14px;
+                    font-weight: normal;
+                    padding: 10px 16px;
+                    border-radius: 20px;
+                    margin-left: 8px;
+                    max-width: 454px;
+                    line-height: 17px;
+
+                    @media screen and (max-width:767px) {
+                        max-width: 220px;
+                    }
+
+
+                }
+
+                .chat-seen {
+                    span {
+                        font-size: 10px;
+                        font-weight: normal;
+                        color: $textblack;
+                        opacity: 0.55;
+                        display: inline-block;
+
+                        &:nth-child(1) {
+                            margin-left: 12px;
+                        }
+                    }
+                }
+            }
+
+            .chat-box-right {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                margin-bottom: 12px;
+                justify-content: flex-end;
+
+                .chat-img {
+                    width: 20px;
+                    height: 20px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 4px;
+                    }
+
+
+                }
+
+                .chat-contents {
+                    background-color: $bgblue;
+                    color: $textwhite;
+                    font-size: 14px;
+                    font-weight: normal;
+                    padding: 10px 16px;
+                    border-radius: 20px;
+                    margin-left: 8px;
+                    max-width: 454px;
+                    line-height: 17px;
+                }
+            }
+
+            // Chat Card Wrap
+            .chat-card-wrap {
+                display: flex;
+                flex-direction: row;
+                margin-left: 32px;
+                align-items: center;
+                position: relative;
+
+                @media screen and (max-width:767px) {
+                    justify-content: center;
+                }
+
+                .arrow-wrap-l {
+                    position: absolute;
+                    left: 33%;
+                    z-index: 1024;
+
+                    @media screen and (max-width:767px) {
+                        left: 10%;
+                    }
+
+                    @media screen and (max-width:393px) {
+                        left: 8%;
+                    }
+
+                    @media screen and (max-width:375px) {
+                        left: 5%;
+                    }
+
+                    .arrow {
+                        background-color: $bgwhite;
+                        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 20px;
+                        position: relative;
+
+                        img {
+                            transform: rotate(-90deg);
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            margin: auto;
+
+                            @media screen and (max-width:767px) {
+                                transform: rotate(80deg);
+                            }
+                        }
+                    }
+                }
+
+                .arrow-wrap-r {
+                    position: absolute;
+                    display: none;
+                    z-index: 1024;
+
+                    @media screen and (max-width:767px) {
+                        display: block;
+                        right: 10%;
+                    }
+
+                    @media screen and (max-width:393px) {
+                        right: 8%;
+                    }
+
+                    @media screen and (max-width:375px) {
+                        right: 5%;
+                    }
+
+                    .arrow {
+                        background-color: $bgwhite;
+                        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 20px;
+                        position: relative;
+
+                        img {
+                            transform: rotate(-90deg);
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            margin: auto;
+                        }
+                    }
+                }
+
+                .card {
+                    width: 247px;
+                    height: 317px;
+                    background-color: $bgwhite;
+                    border: 1px solid #C7C7C7;
+                    border-radius: 16px;
+                    position: relative;
+                    margin-right: 12px;
+
+                    .card-img {
+                        width: 246px;
+                        height: 164px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-top-left-radius: 16px;
+                            border-top-right-radius: 16px;
+                        }
+
+                        &.img-last {
+                            width: 246px;
+                            height: auto;
+                        }
+                    }
+
+                    .card-body {
+                        padding: 16px;
+
+                        h5 {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: $textblack;
+                            margin-bottom: 8px;
+                            line-height: 22px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            font-weight: normal;
+                            color: $textblack;
+                            opacity: 0.66;
+                            line-height: 17px;
+                        }
+                    }
+
+                    .card-btn {
+                        text-align: center;
+                        padding: 12px 0;
+                        border-top: 0.25px solid rgba(0, 0, 0, 0.15);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+
+                        .btn-demo {
+                            display: inline-block;
+                            text-decoration: none;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 17px;
+                            color: $textgrey;
+                            text-align: center;
+
+                            img {
+                                vertical-align: top;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .bullets {
+                text-align: center;
+
+                span {
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $bggreydark;
+                    border-radius: 20px;
+
+                    &.active {
+                        background-color: $bgblue;
+                    }
+                }
+            }
+        }
+
+        .message-field {
+            // position: fixed;
+            // bottom: 0;
+            background-color: $bgwhite;
+
+            .form-flex {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+
+                button {
+                    border: 0;
+                    background-color: transparent;
+                }
+
+                .msg-field {
+                    width: 100%;
+                    padding: 10px 24px;
+                    border-radius: 20px;
+                    background-color: $bggrey;
+                    border: 0.25px solid rgba(0, 0, 0, 0.22);
+                    margin: 0 12px;
+                }
+
+            }
+
+            h5 {
+                font-size: 11px;
+                line-height: 13px;
+                color: $textblack;
+                opacity: 0.55;
+                text-align: center;
+                margin: 8px 0;
+            }
+        }
+    }
+}
